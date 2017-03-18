@@ -1,0 +1,5 @@
+# Project and Utility
+*.swp
+*.pyc
+__pycache_
+_

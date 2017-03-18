@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
-import argparse
+import argparser
 
 def main():
-    argparser = argparse.ArgumentParser()
+    argparser.parse_args()
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
- 
