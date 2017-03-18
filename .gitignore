@@ -1,5 +1,9 @@
 # Project and Utility
 *.swp
+
+# Python
 *.pyc
-__pycache_
-_
+__pycache__
+
+# C
+*.o
