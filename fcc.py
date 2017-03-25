@@ -3,7 +3,8 @@
 import argparser
 
 def main():
-    argparser.parse_args()
+    args = argparser.parse_args()
+    print(args.files)
 
 if __name__ == '__main__':
     main()
