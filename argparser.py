@@ -11,7 +11,8 @@ def _compile_args(subparsers):
 def parse_args(args=None):
     parser = argparse.ArgumentParser(
             description='FC Language Compiler Toolset')
-    main_subparsers = parser.add_subparsers(help='Main Tools')
+    main_subparsers = parser.add_subparsers(help='Main Tools',
+            dest='main_command')
     _compile_args(main_subparsers)
     if args is None:
         return parser.parse_args()
