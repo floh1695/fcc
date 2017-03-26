@@ -31,6 +31,7 @@ class Lexer:
 
     def tokenize(self):
         self.token_stack = []
+        self._char_gen = self._get_char()
         try:
             self._tokenize_sub()
         except TypeError:
@@ -46,11 +47,15 @@ class Lexer:
     def _get_char(self):
         for char in self.filedata:
             yield char
-        yield None
-
-        def _throw_away(self):
-            self._get_char()
 
     def _tokenize_sub(self):
-        for char in self._get_char():
+        for char in self._char_gen:
+            if char in ['#']:
+                self._tokenize_comment()
+
+    def _tokenize_comment(self):
+        for char in self._char_gen:
+            if char in ['\n', '\r']:
+                break
             self.next_word += char
+        self._push_word(T_COMMENT)
