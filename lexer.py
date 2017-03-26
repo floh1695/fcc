@@ -29,12 +29,28 @@ class Lexer:
                 for char in line:
                     self.filedata += char
 
+    def tokenize(self):
+        self.token_stack = []
+        try:
+            self._tokenize_sub()
+        except TypeError:
+            pass
+        return self.token_stack
+
     def _push_word(self, token_type, next_word=None):
         if next_word is None:
             next_word = self.next_word
         self.token_stack.append(Token(token_type, next_word))
         self.next_word = ''
 
-    def tokenize(self):
-        self.token_stack = []
-        return self.token_stack
+    def _get_char(self):
+        for char in self.filedata:
+            yield char
+        yield None
+
+        def _throw_away(self):
+            self._get_char()
+
+    def _tokenize_sub(self):
+        for char in self._get_char():
+            self.next_word += char
