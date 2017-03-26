@@ -12,4 +12,5 @@ def main(args=None):
 
     filewrappers = []
     for f in files:
-        filewrappers.append(filewrapper.FileWrapper(f))
+        fw = filewrapper.FileWrapper(f)
+        filewrappers.append(fw)

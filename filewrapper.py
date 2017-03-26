@@ -13,4 +13,5 @@ class FileWrapper:
 
     def _init_tokens(self):
         lex = lexer.Lexer(self.filename)
-        lex.tokenize()
+        self.tokens = lex.tokenize()
+        print self.tokens
