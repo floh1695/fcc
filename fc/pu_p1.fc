@@ -1,0 +1,11 @@
+# https://projecteuler.net/problem=1
+
+let nums be {1..1000} while static;
+let sum be 0 while mutable;
+for i over nums;
+  if 0 in {i % 3, i % 5};
+    sum += i;
+  ;;
+;;
+
+print('{}', sum);

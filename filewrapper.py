@@ -3,7 +3,6 @@
 import lexer
 
 class FileWrapper:
-
     def __init__(self, filename):
         self.filename = filename
         self._init_data()
